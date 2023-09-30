@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IAttackingTool 
 {
-    void Attack(Vector3 target, GameObject attacker);
+    void Attack(GameObject target, GameObject attacker);
 }
