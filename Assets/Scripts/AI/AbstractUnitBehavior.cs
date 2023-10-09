@@ -7,7 +7,7 @@ using Zenject;
 
 namespace Behaviors
 {
-    public abstract class AbstractUnitBehavior : ICharacterController
+    public abstract class AbstractUnitBehavior
     {
 
         internal EntityDataBase dataBase;
@@ -19,17 +19,6 @@ namespace Behaviors
         internal AbstractUnitBehavior(EntityDataBase dataBase)
         {
             this.dataBase = dataBase;
-        }
-
-
-        public void Attack(Vector3 targetPosition)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void MoveUnitTowards(Vector3 destination)
-        {
-
         }
 
         public async void ControlUnitActions(Unit controlledUnit, int controllingIntervalMilliseconds)

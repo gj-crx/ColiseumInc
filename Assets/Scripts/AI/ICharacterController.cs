@@ -5,5 +5,5 @@ using UnityEngine;
 public interface ICharacterController
 {
     void MoveUnitTowards(Vector3 destination);
-    void Attack(Vector3 targetPosition);
+    void Attack(GameObject target);
 }

@@ -25,7 +25,7 @@ public class Player : MonoBehaviour, IMovable, IHittable, IAbleToAttack
         if (CurrentHP <= 0) Death();
     }
 
-    public void Attack(Vector3 target)
+    public void Attack(GameObject target)
     {
         attackingComponent.Attack(target, gameObject);
     }

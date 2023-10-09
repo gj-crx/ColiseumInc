@@ -21,8 +21,10 @@ public class UnitSpawner
         Unit newUnit = factory.Create();
         newUnit.transform.position = unitPosition;
 
+        dataBase.AllUnits.Add(newUnit);
+
         return newUnit;
     }
 
-    private class UnitFactory : PlaceholderFactory<Unit> { }
+    internal class UnitFactory : PlaceholderFactory<Unit> { }
 }
