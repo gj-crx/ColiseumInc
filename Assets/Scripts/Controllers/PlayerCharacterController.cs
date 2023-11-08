@@ -25,7 +25,7 @@ public class PlayerCharacterController : MonoBehaviour, ICharacterController
         if (Input.GetKeyDown(KeyCode.W)) MoveUnitTowards(GetClickedPosition());
         if (Input.GetKeyDown(KeyCode.E))
         {
-            var target = targetAcquirer.GetClosestTarget(dataBase, playerObject.transform.position, playerObject.GetUnitStats().DistanceOfSight, playerObject.FactionID);
+            var target = targetAcquirer.GetClosestTarget(dataBase, playerObject.transform.position, playerObject.GetUnitStats().DistanceOfSight, playerObject.tag);
             if (target != null) Attack(target.gameObject);
         }
     }

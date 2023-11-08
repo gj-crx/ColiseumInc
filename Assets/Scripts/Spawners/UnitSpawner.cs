@@ -8,12 +8,13 @@ using Zenject;
 public class UnitSpawner
 {
     private EntityDataBase dataBase;
-    private UnitFactory factory = new UnitFactory();
+    private UnitFactory factory;
 
     [Inject]
-    private UnitSpawner(EntityDataBase dataBase)
+    private UnitSpawner(EntityDataBase dataBase, UnitFactory factory)
     {
         this.dataBase = dataBase;
+        this.factory = factory;
     }
 
     public Unit SpawnUnit(GameObject prefabOfUnit, Vector3 unitPosition)

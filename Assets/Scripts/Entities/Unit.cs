@@ -7,7 +7,7 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class Unit : MonoBehaviour, IMovable, IHittable, IAbleToAttack
 {
-    public byte FactionID { get; private set; }
+    public byte FactionID = 0;
 
     //Local components
     [SerializeField] private HealthComponent healthComponent = new HealthComponent();

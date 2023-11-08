@@ -5,5 +5,5 @@ using UnityEngine;
 public interface IUnitPool
 {
     bool IsActive { get; }
-    List<Unit> GetStoredUnits();
+    List<GameObject> GetStoredUnits();
 }

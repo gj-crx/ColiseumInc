@@ -7,16 +7,17 @@ using Zenject;
 
 namespace Behaviors
 {
-    public class BasicUnitBehavior : AbstractUnitBehavior
+    public class BasicUnitBehavior : UnitBehavior
     {
-        public BasicUnitBehavior(EntityDataBase dataBase) : base(dataBase)
+        public BasicUnitBehavior(EntityDataBase dataBase, GameObject controlledUnit) : base(dataBase)
         {
             this.dataBase = dataBase;
 
             onUnitControlled += ChaseAndAttackClosestTarget;
+            Task.Factory.StartNew(() => ControlUnitActions(controlledUnit, 1000));
         }
 
-        private void ChaseAndAttackClosestTarget(Unit attackingUnit)
+        private void ChaseAndAttackClosestTarget(GameObject attackingUnit)
         {
             var closestTarget = targetAcquirer.GetClosestTarget(dataBase, attackingUnit.transform.position, attackingUnit.GetUnitStats().DistanceOfSight, attackingUnit.FactionID);
 
@@ -24,7 +25,7 @@ namespace Behaviors
             {
                 if (Vector3.Distance(attackingUnit.transform.position, closestTarget.transform.position) < attackingUnit.GetUnitStats().AttackRange)
                 {
-                    attackingUnit.Attack(closestTarget.gameObject);
+                    attackingUnit.Attack(closestTarget);
                 }
                 else attackingUnit.MoveToPosition(closestTarget.transform.position);
             } 

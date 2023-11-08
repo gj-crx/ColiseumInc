@@ -12,6 +12,7 @@ namespace Installers
         public override void InstallBindings()
         {
             Container.BindFactory<Unit, UnitSpawner.UnitFactory>().FromComponentInNewPrefab(basicUnitPrefab).AsSingle();
+            Container.Bind<UnitSpawner>().FromNew().AsSingle();
         }
     }
 }
