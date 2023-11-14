@@ -22,7 +22,7 @@ public class EnemyController : MonoBehaviour, ICharacterController
     {
         this.dataBase = dataBase;
         Debug.Log(controlledUnit + " nig");
-        behavior = new BasicUnitBehavior(dataBase, controlledUnit);
+        behavior = new BasicUnitBehavior(dataBase, controlledUnit.gameObject);
     }
     void Awake() => controlledUnit = GetComponent<Unit>();
 

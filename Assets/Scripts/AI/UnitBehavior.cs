@@ -13,6 +13,7 @@ namespace Behaviors
 
         internal EntityDataBase dataBase;
         internal TargetAcquirer targetAcquirer = new TargetAcquirer();
+        internal Unit controlledUnit;
         internal OnUnitControlled onUnitControlled;
 
 
@@ -23,7 +24,7 @@ namespace Behaviors
             this.dataBase = dataBase;
         }
 
-        public async void ControlUnitActions(GameObject controlledUnit, int controllingIntervalMilliseconds)
+        public async void ControlUnitActions(Unit controlledUnit, int controllingIntervalMilliseconds)
         {
             try
             {
@@ -31,7 +32,7 @@ namespace Behaviors
                 while (dataBase.IsActive && controlledUnit != null)
                 {
                     Debug.Log("Controlling");
-                    onUnitControlled?.Invoke(controlledUnit);
+                    onUnitControlled?.Invoke();
 
                     await Task.Delay(controllingIntervalMilliseconds);
                 }
@@ -42,6 +43,6 @@ namespace Behaviors
             }
         }
 
-        internal delegate void OnUnitControlled(GameObject controlledUnit);
+        internal delegate void OnUnitControlled();
     }
 }

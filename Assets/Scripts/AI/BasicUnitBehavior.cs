@@ -9,25 +9,26 @@ namespace Behaviors
 {
     public class BasicUnitBehavior : UnitBehavior
     {
-        public BasicUnitBehavior(EntityDataBase dataBase, GameObject controlledUnit) : base(dataBase)
+        public BasicUnitBehavior(EntityDataBase dataBase, Unit controlledUnit, GameObject controlledUnitObject) : base(dataBase)
         {
             this.dataBase = dataBase;
+            this.controlledUnit = controlledUnit;
 
             onUnitControlled += ChaseAndAttackClosestTarget;
-            Task.Factory.StartNew(() => ControlUnitActions(controlledUnit, 1000));
+            Task.Factory.StartNew(() => ControlUnitActions(controlledUnitObject, 1000));
         }
 
-        private void ChaseAndAttackClosestTarget(GameObject attackingUnit)
+        private void ChaseAndAttackClosestTarget()
         {
-            var closestTarget = targetAcquirer.GetClosestTarget(dataBase, attackingUnit.transform.position, attackingUnit.GetUnitStats().DistanceOfSight, attackingUnit.FactionID);
+            var closestTarget = targetAcquirer.GetClosestTarget(dataBase, controlledUnit.LastPosition, controlledUnit.GetUnitStats().DistanceOfSight, controlledUnit.tag);
 
             if (closestTarget != null)
             {
-                if (Vector3.Distance(attackingUnit.transform.position, closestTarget.transform.position) < attackingUnit.GetUnitStats().AttackRange)
+                if (Vector3.Distance(controlledUnit.transform.position, closestTarget.transform.position) < controlledUnit.GetUnitStats().AttackRange)
                 {
-                    attackingUnit.Attack(closestTarget);
+                    controlledUnit.Attack(closestTarget);
                 }
-                else attackingUnit.MoveToPosition(closestTarget.transform.position);
+                else controlledUnit.MoveToPosition(closestTarget.transform.position);
             } 
         }
     }

@@ -22,7 +22,7 @@ public class UnitSpawner
         Unit newUnit = factory.Create();
         newUnit.transform.position = unitPosition;
 
-        dataBase.AllUnits.Add(newUnit);
+        dataBase.AllUnits.Add(newUnit.gameObject);
 
         return newUnit;
     }

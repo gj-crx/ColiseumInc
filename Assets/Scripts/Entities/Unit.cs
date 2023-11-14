@@ -8,12 +8,17 @@ using UnityEngine.AI;
 public class Unit : MonoBehaviour, IMovable, IHittable, IAbleToAttack
 {
     public byte FactionID = 0;
+    public Vector3 LastPosition = Vector3.zero;
 
     //Local components
     [SerializeField] private HealthComponent healthComponent = new HealthComponent();
     [SerializeField] private NavMeshAgent agent;
     private IAttackingTool attackingComponent = new ShootingComponent();
 
+    void Update()
+    {
+        LastPosition = transform.position;
+    }
 
     public HealthComponent.UnitStatsReadOnly GetUnitStats() => healthComponent.UnitStats;
 
@@ -24,7 +29,7 @@ public class Unit : MonoBehaviour, IMovable, IHittable, IAbleToAttack
         if (healthComponent.RecieveDamage(damage) == HealthComponent.HealthStatus.Dead) Death();
     }
 
-    public void Attack(GameObject target) => attackingComponent.Attack(target, gameObject);
+    public void Attack(Unit target) => attackingComponent.Attack(target, gameObject);
 
     private void Death()
     {

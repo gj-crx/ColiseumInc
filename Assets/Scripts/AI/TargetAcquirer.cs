@@ -6,10 +6,10 @@ namespace Behaviors
 {
     public class TargetAcquirer
     {
-        public GameObject GetClosestTarget(IUnitPool sampleToSearchFrom, Vector3 referencePosition, float maxSearchDistance, string factionTag)
+        public Unit GetClosestTarget(IUnitPool sampleToSearchFrom, Vector3 referencePosition, float maxSearchDistance, string factionTag)
         {
             float minimalDistance = maxSearchDistance;
-            GameObject minimalDistanceUnit = null;
+            Unit minimalDistanceUnit = null;
 
             foreach (var unit in sampleToSearchFrom.GetStoredUnits())
             {
