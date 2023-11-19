@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class ShootingComponent : IAttackingTool
 {
-    public void Attack(GameObject target, GameObject attacker)
+    public void Attack(Unit target, GameObject attacker)
     { //attack -> shoot
         Bullet newBullet = GameObject.Instantiate(PrefabManager.BulletPrefabs[0], attacker.transform.position + attacker.transform.forward, Quaternion.identity).GetComponent<Bullet>();
 
