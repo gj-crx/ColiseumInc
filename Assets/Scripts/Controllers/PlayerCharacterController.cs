@@ -26,11 +26,11 @@ public class PlayerCharacterController : MonoBehaviour, ICharacterController
         if (Input.GetKeyDown(KeyCode.E))
         {
             var target = targetAcquirer.GetClosestTarget(dataBase, playerObject.transform.position, playerObject.GetUnitStats().DistanceOfSight, playerObject.tag);
-            if (target != null) Attack(target.gameObject);
+            if (target != null) Attack(target);
         }
     }
 
-    public void Attack(GameObject target)
+    public void Attack(Unit target)
     {
         if (wrongInput)
         {

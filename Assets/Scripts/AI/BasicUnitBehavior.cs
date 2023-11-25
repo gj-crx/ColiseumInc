@@ -9,13 +9,13 @@ namespace Behaviors
 {
     public class BasicUnitBehavior : UnitBehavior
     {
-        public BasicUnitBehavior(EntityDataBase dataBase, Unit controlledUnit, GameObject controlledUnitObject) : base(dataBase)
+        public BasicUnitBehavior(EntityDataBase dataBase, Unit controlledUnit) : base(dataBase)
         {
             this.dataBase = dataBase;
             this.controlledUnit = controlledUnit;
 
             onUnitControlled += ChaseAndAttackClosestTarget;
-            Task.Factory.StartNew(() => ControlUnitActions(controlledUnitObject, 1000));
+            Task.Factory.StartNew(() => ControlUnitActions(controlledUnit, 1000));
         }
 
         private void ChaseAndAttackClosestTarget()

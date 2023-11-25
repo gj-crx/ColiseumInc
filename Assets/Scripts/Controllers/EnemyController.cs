@@ -22,7 +22,7 @@ public class EnemyController : MonoBehaviour, ICharacterController
     {
         this.dataBase = dataBase;
         Debug.Log(controlledUnit + " nig");
-        behavior = new BasicUnitBehavior(dataBase, controlledUnit.gameObject);
+        behavior = new BasicUnitBehavior(dataBase, controlledUnit);
     }
     void Awake() => controlledUnit = GetComponent<Unit>();
 
@@ -31,7 +31,7 @@ public class EnemyController : MonoBehaviour, ICharacterController
 
     }
 
-    public void Attack(GameObject target)
+    public void Attack(Unit target)
     {
         if (wrongInput)
         {
