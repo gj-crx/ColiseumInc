@@ -12,8 +12,8 @@ public class Unit : MonoBehaviour, IMovable, IHittable, IAbleToAttack
 
     //Local components
     [SerializeField] private HealthComponent healthComponent = new HealthComponent();
+    [SerializeField] private IAttackingTool attackingComponent = new ShootingComponent();
     [SerializeField] private NavMeshAgent agent;
-    private IAttackingTool attackingComponent = new ShootingComponent();
 
     void Update()
     {
