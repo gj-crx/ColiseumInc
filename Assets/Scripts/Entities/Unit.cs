@@ -7,7 +7,7 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class Unit : MonoBehaviour, IMovable, IHittable, IAbleToAttack
 {
-    public byte FactionID = 0;
+    public string FactionTag = "NoTag";
     public Vector3 LastPosition = Vector3.zero;
 
     //Local components

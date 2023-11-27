@@ -627,7 +627,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef0bb899812d72c48b0d38c38609d937, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingScenario: {fileID: 11400000, guid: c065b1cfd1a938a46bfd3591a0728bc1, type: 2}
+  startingScenario: {fileID: 11400000, guid: e1f3de895fef4b0489930c54e3831dd5, type: 2}
 --- !u!1 &1450210310
 GameObject:
   m_ObjectHideFlags: 0

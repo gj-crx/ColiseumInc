@@ -14,7 +14,6 @@ namespace StartUp
         private void Awake()
         {
             Settings.ApplySettings();
-
         }
     }
 }

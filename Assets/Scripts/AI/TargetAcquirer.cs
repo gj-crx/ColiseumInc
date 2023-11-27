@@ -13,9 +13,9 @@ namespace Behaviors
 
             foreach (var unit in sampleToSearchFrom.GetStoredUnits())
             {
-                if (unit != null && unit.tag != factionTag)
+                if (unit != null && unit.FactionTag != factionTag)
                 {
-                    float currentDistance = Vector3.Distance(referencePosition, unit.transform.position);
+                    float currentDistance = Vector3.Distance(referencePosition, unit.LastPosition);
 
                     if (currentDistance < minimalDistance)
                     {

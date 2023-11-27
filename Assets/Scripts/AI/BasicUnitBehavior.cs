@@ -20,7 +20,7 @@ namespace Behaviors
 
         private void ChaseAndAttackClosestTarget()
         {
-            var closestTarget = targetAcquirer.GetClosestTarget(dataBase, controlledUnit.LastPosition, controlledUnit.GetUnitStats().DistanceOfSight, controlledUnit.tag);
+            var closestTarget = targetAcquirer.GetClosestTarget(dataBase, controlledUnit.LastPosition, controlledUnit.GetUnitStats().DistanceOfSight, controlledUnit.FactionTag);
 
             if (closestTarget != null)
             {
