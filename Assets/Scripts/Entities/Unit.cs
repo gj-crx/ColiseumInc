@@ -29,7 +29,7 @@ public class Unit : MonoBehaviour, IMovable, IHittable, IAbleToAttack
         if (healthComponent.RecieveDamage(damage) == HealthComponent.HealthStatus.Dead) Death();
     }
 
-    public void Attack(Unit target) => attackingComponent.Attack(target, gameObject);
+    public void Attack(Unit target) => attackingComponent.Attack(target, this);
 
     private void Death()
     {

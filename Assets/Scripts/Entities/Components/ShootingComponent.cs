@@ -5,9 +5,9 @@ using UnityEngine;
 [System.Serializable]
 public class ShootingComponent : IAttackingTool
 {
-    public void Attack(Unit target, GameObject attacker)
+    public void Attack(Unit target, Unit attacker)
     { //attack -> shoot
-        Bullet newBullet = GameObject.Instantiate(PrefabManager.BulletPrefabs[0], attacker.transform.position + attacker.transform.forward, Quaternion.identity).GetComponent<Bullet>();
+        Bullet newBullet = GameObject.Instantiate(PrefabManager.BulletPrefabs[0], attacker.LastPosition + attacker.transform.forward, Quaternion.identity).GetComponent<Bullet>();
 
         newBullet.transform.rotation = attacker.transform.rotation;
         newBullet.transform.LookAt(new Vector3(target.transform.position.x, newBullet.transform.position.y, target.transform.position.z));

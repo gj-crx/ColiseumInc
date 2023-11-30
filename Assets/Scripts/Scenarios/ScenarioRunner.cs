@@ -26,7 +26,8 @@ namespace Scenarios
             for (int i = 0; i < scenarioToRun.UnitsToInitialize.Count; i++)
             {
                 Debug.Log(unitSpawner);
-                unitSpawner.SpawnUnit(scenarioToRun.UnitsToInitialize[i].gameObject, GetRandomPosition(Vector3.zero, scenarioToRun.MapRadius));
+                Unit newUnit = unitSpawner.SpawnUnit(scenarioToRun.UnitsToInitialize[i].gameObject, GetRandomPosition(Vector3.zero, scenarioToRun.MapRadius));
+                newUnit.FactionTag = "enemy " + Random.Range(0, 10);
             }
         }
 

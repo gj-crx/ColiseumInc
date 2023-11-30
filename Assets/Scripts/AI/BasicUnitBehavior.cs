@@ -24,11 +24,12 @@ namespace Behaviors
 
             if (closestTarget != null)
             {
-                if (Vector3.Distance(controlledUnit.transform.position, closestTarget.transform.position) < controlledUnit.GetUnitStats().AttackRange)
+                Debug.Log("Closest target is " + closestTarget.FactionTag);
+                if (Vector3.Distance(controlledUnit.LastPosition, closestTarget.LastPosition) < controlledUnit.GetUnitStats().AttackRange)
                 {
                     controlledUnit.Attack(closestTarget);
                 }
-                else controlledUnit.MoveToPosition(closestTarget.transform.position);
+                else controlledUnit.MoveToPosition(closestTarget.LastPosition);
             } 
         }
     }

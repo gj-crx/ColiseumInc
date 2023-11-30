@@ -135,7 +135,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bee549d2f121d241a92207487b9d514, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FactionID: 0
+  FactionTag: enemy 1
+  LastPosition: {x: 0, y: 0, z: 0}
   healthComponent:
     MaxHP: 100
     Damage: 20
