@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
+using static PlasticGui.PlasticTableColumn;
 
 namespace Scenarios
 {
@@ -34,6 +35,16 @@ namespace Scenarios
         private Vector3 GetRandomPosition(Vector3 mapCenter, float mapRadius, float ZCord = 1)
         {
             return new Vector3(Random.Range(-mapRadius, mapRadius), Random.Range(-mapRadius, mapRadius), ZCord);
+        }
+
+        void TestSorting()
+        {
+            int[] toSort = { 3, 8, 3, 6, 7, 9, 1, 15 };
+
+            var n = Sorting.SwapSorting(toSort, true);
+            string sorted = "";
+            foreach (int t in n) sorted += t.ToString() + " ,";
+            Debug.Log(sorted);
         }
     }
 }

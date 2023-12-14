@@ -18,6 +18,7 @@ public class Unit : MonoBehaviour, IMovable, IHittable, IAbleToAttack
     void Update()
     {
         LastPosition = transform.position;
+        attackingComponent.ExecureStoredAttackOrders();
     }
 
     public HealthComponent.UnitStatsReadOnly GetUnitStats() => healthComponent.UnitStats;
@@ -29,7 +30,7 @@ public class Unit : MonoBehaviour, IMovable, IHittable, IAbleToAttack
         if (healthComponent.RecieveDamage(damage) == HealthComponent.HealthStatus.Dead) Death();
     }
 
-    public void Attack(Unit target) => attackingComponent.Attack(target, this);
+    public void Attack(Unit target) => attackingComponent.SetAttackingOrder(target, this);
 
     private void Death()
     {
