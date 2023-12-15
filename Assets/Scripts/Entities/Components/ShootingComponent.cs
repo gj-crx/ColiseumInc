@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class ShootingComponent : IAttackingTool
+public class ShootingComponent : IAttackingComponent
 {
     private Unit target = null;
     private Unit attacker = null;
