@@ -23,7 +23,9 @@ public class Unit : MonoBehaviour, IMovable, IHittable, IAbleToAttack
     void Update()
     {
         LastPosition = transform.position;
+
         attackingComponent.ExecureStoredAttackOrders();
+        movementComponent.ExecureStoredMovementOrders();
     }
 
     public HealthComponent.UnitStatsReadOnly GetUnitStats() => healthComponent.UnitStats;

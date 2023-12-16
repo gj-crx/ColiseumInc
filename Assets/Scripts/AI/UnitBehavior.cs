@@ -20,15 +20,14 @@ namespace Behaviors
         [Inject]
         internal UnitBehavior(EntityDataBase dataBase)
         {
-            Debug.Log("even injected");
             this.dataBase = dataBase;
         }
 
-        public async void ControlUnitActions(Unit controlledUnit, int controllingIntervalMilliseconds)
+        public async void ControlUnitActions(Unit controlledUnit, int controllingIntervalMilliseconds, int randomPreDelay = 0)
         {
+            await Task.Delay(randomPreDelay);
             try
             {
-                Debug.Log("controlling started " + dataBase.IsActive);
                 while (dataBase.IsActive && controlledUnit != null)
                 {
                     Debug.Log("Controlling");

@@ -4,5 +4,6 @@ using UnityEngine;
 
 public interface IMovementComponent
 {
+    bool ExecureStoredMovementOrders();
     bool SetDestination(Vector3 targetPosition);
 }

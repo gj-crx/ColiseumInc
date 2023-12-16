@@ -32,9 +32,9 @@ namespace Scenarios
             }
         }
 
-        private Vector3 GetRandomPosition(Vector3 mapCenter, float mapRadius, float ZCord = 1)
+        private Vector3 GetRandomPosition(Vector3 mapCenter, float mapRadius, float YCord = 1)
         {
-            return new Vector3(Random.Range(-mapRadius, mapRadius), Random.Range(-mapRadius, mapRadius), ZCord);
+            return mapCenter + new Vector3(Random.Range(-mapRadius, mapRadius), YCord, Random.Range(-mapRadius, mapRadius));
         }
 
         void TestSorting()

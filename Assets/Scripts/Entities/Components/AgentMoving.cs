@@ -9,6 +9,8 @@ namespace Components {
     {
         private NavMeshAgent agent;
 
+        private Vector3 storedTargetPosition = Vector3.zero;
+
         public AgentMoving(NavMeshAgent agent)
         {
             this.agent = agent;
@@ -18,9 +20,21 @@ namespace Components {
             this.agent = unitToGetAgentFrom.GetComponent<NavMeshAgent>();
         }
 
+        public bool ExecureStoredMovementOrders()
+        {
+            if (storedTargetPosition != Vector3.zero)
+            {
+                bool result = agent.SetDestination(storedTargetPosition);
+                storedTargetPosition = Vector3.zero;
+                return result;
+            }
+            return false;
+        }
+
         public bool SetDestination(Vector3 targetPosition)
         {
-            return agent.SetDestination(targetPosition);
+            this.storedTargetPosition = targetPosition;
+            return true;
         }
     }
 }

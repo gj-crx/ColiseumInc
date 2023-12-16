@@ -15,7 +15,7 @@ MonoBehaviour:
   UnitsToInitialize:
   - {fileID: 7872463610814234181, guid: 80b63e7fa8f433346ab44098e08ba564, type: 3}
   - {fileID: 3387247344190313398, guid: 85f229baf14f20744a57b5dc9319bd41, type: 3}
-  - {fileID: 3387247344190313398, guid: 6c3c58bfae1e8ea41bbe04bc7cc32996, type: 3}
-  - {fileID: 3387247344190313398, guid: 6c3c58bfae1e8ea41bbe04bc7cc32996, type: 3}
   - {fileID: 3387247344190313398, guid: 85f229baf14f20744a57b5dc9319bd41, type: 3}
-  MapRadius: 10
+  - {fileID: 3387247344190313398, guid: 85f229baf14f20744a57b5dc9319bd41, type: 3}
+  - {fileID: 3387247344190313398, guid: 85f229baf14f20744a57b5dc9319bd41, type: 3}
+  MapRadius: 25

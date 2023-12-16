@@ -37,8 +37,7 @@ public class PlayerCharacterController : MonoBehaviour, ICharacterController
             Debug.Log("Wrong input alert sound");
             return;
         }
-        (playerObject as IAbleToAttack).Att
-            namack(target);
+        (playerObject as IAbleToAttack).Attack(target);
     }
 
     public void MoveUnitTowards(Vector3 destination)

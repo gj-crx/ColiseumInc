@@ -15,7 +15,9 @@ namespace Behaviors
             this.controlledUnit = controlledUnit;
 
             onUnitControlled += ChaseAndAttackClosestTarget;
-            Task.Factory.StartNew(() => ControlUnitActions(controlledUnit, 1000));
+
+            int randomPreDelay = Random.Range(0, 500);
+            Task.Factory.StartNew(() => ControlUnitActions(controlledUnit, 1000, randomPreDelay));
         }
 
         private void ChaseAndAttackClosestTarget()
@@ -24,13 +26,16 @@ namespace Behaviors
 
             if (closestTarget != null)
             {
-                Debug.Log("Closest target is " + closestTarget.FactionTag);
                 if (Vector3.Distance(controlledUnit.LastPosition, closestTarget.LastPosition) < controlledUnit.GetUnitStats().AttackRange)
                 {
                     controlledUnit.Attack(closestTarget);
                 }
-                else controlledUnit.MoveToPosition(closestTarget.LastPosition);
+                else controlledUnit.MoveToPosition(GetPositionNearTarget(closestTarget.LastPosition));
             } 
+        }
+        private Vector3 GetPositionNearTarget(Vector3 targetPosition)
+        {
+            return targetPosition + (targetPosition - controlledUnit.LastPosition).normalized * 2.5f;
         }
     }
 }
