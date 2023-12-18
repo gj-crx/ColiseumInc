@@ -12,10 +12,10 @@ public class ShootingComponent : IAttackingComponent
     {
         if (storedTarget != null)
         {
-            Bullet newBullet = GameObject.Instantiate(PrefabManager.BulletPrefabs[0], attacker.LastPosition + attacker.transform.forward, Quaternion.identity).GetComponent<Bullet>();
+            Bullet newBullet = GameObject.Instantiate(PrefabManager.BulletPrefabs[0], attacker.transform.position + attacker.transform.forward, Quaternion.identity).GetComponent<Bullet>();
 
             newBullet.transform.rotation = attacker.transform.rotation;
-            newBullet.transform.LookAt(new Vector3(storedTarget.transform.position.x, newBullet.transform.position.y, storedTarget.transform.position.z));
+          //  newBullet.transform.LookAt(new Vector3(storedTarget.transform.position.x, newBullet.transform.position.y, storedTarget.transform.position.z));
 
             storedTarget = null;
         }

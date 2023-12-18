@@ -35,7 +35,7 @@ namespace Behaviors
         }
         private Vector3 GetPositionNearTarget(Vector3 targetPosition)
         {
-            return targetPosition + (targetPosition - controlledUnit.LastPosition).normalized * 2.5f;
+            return targetPosition + (targetPosition - controlledUnit.LastPosition).normalized * controlledUnit.GetUnitStats().AttackRange;
         }
     }
 }

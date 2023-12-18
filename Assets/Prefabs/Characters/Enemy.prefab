@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3177068110186474905}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.38, y: 0.233, z: 0.585}
+  m_LocalPosition: {x: 0.004, y: 0.233, z: 0.585}
   m_LocalScale: {x: 1, y: 0.16104, z: 0.21271}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -227,7 +227,7 @@ MonoBehaviour:
     AttackSpeed: 1
     AttackRange: 6
     MovementSpeed: 3
-    DistanceOfSight: 20
+    DistanceOfSight: 50
     CurrentHP: 100
 --- !u!114 &2122231997172388986
 MonoBehaviour:

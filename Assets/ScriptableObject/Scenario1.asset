@@ -18,4 +18,4 @@ MonoBehaviour:
   - {fileID: 3387247344190313398, guid: 85f229baf14f20744a57b5dc9319bd41, type: 3}
   - {fileID: 3387247344190313398, guid: 85f229baf14f20744a57b5dc9319bd41, type: 3}
   - {fileID: 3387247344190313398, guid: 85f229baf14f20744a57b5dc9319bd41, type: 3}
-  MapRadius: 25
+  MapRadius: 65
